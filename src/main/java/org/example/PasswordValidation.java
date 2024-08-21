@@ -12,7 +12,7 @@ public class PasswordValidation {
         return password.length() > 7;
     }
 
-    // public static int getLength(??? userInput)
+
     public static boolean containsDigit(String password) {
         boolean containsDigit = false;
         char[] passwordCharacters = password.toCharArray();
@@ -23,7 +23,7 @@ public class PasswordValidation {
         }
        return containsDigit;
     }
-// public static boolean containsUppercaseAndLowercase(String password)
+// public static boolean containsUpperAndLowercase(String password)
 // public static boolean isCommon(String password)
 
 }

@@ -50,4 +50,12 @@ class PasswordValidationTest {
         boolean actual = PasswordValidation.containsDigit(password);
         assertEquals(expected, actual);
     }
+
+@Test
+    void containsUpperAndLowercase_returnsFalse_whenCalledWithhallomama(){
+String password = "hallomama";
+boolean expected = false;
+boolean actual = PasswordValidation.containsUpperAndLowercase(password);
+assertEquals(expected, actual);
+}
 }
