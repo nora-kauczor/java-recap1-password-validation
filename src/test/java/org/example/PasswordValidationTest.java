@@ -36,4 +36,18 @@ class PasswordValidationTest {
         boolean actual = PasswordValidation.containsDigit(password);
         assertEquals(expected, actual);
     }
+    @Test
+    void containsDigit_returnsFalse_whenCalledWithMarkusMeiersPasswort(){
+        String password = "MarkusMeiersPasswort";
+        boolean expected = false;
+        boolean actual = PasswordValidation.containsDigit(password);
+        assertEquals(expected, actual);
+    }
+    @Test
+    void containsDigit_returnsTrue_whenCalledWithPassw0rt(){
+        String password = "Passw0rt";
+        boolean expected = true;
+        boolean actual = PasswordValidation.containsDigit(password);
+        assertEquals(expected, actual);
+    }
 }
