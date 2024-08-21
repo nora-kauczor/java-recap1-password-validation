@@ -142,7 +142,7 @@ class PasswordValidationTest {
 
     @Test
     void matchesAllCriteria_returnsFalse_whenCalledWithhallomama(){
-        String password = "$$uhdiwdiu546T";
+        String password = "hallomama";
         boolean expected = false;
         boolean actual = PasswordValidation.matchesAllCriteria(password);
         assertEquals(expected, actual);
