@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.Scanner;
+import java.util.Arrays;
+
 
 public class PasswordValidation {
     public static void main(String[] args) {
@@ -46,5 +48,11 @@ public class PasswordValidation {
         return containsUpperAndLowerCase;
     }
 
-    // public static boolean isNotWeak(String password)
+    public static boolean isNotWeak(String password) {
+        String[] weakPasswords = {"password123", "123456", "qwerty", "abc123", "password1", "letmein", "welcome", "123456789", "admin", "Passwort",};
+        if (Arrays.asList(weakPasswords).contains(password)) {
+            return false;
+        }
+        return true;
+    }
 }
