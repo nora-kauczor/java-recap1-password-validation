@@ -78,9 +78,24 @@ class PasswordValidationTest {
     }
 
     @Test
-    void isNotWeak_returnsTrue_whenCalledWithPasswort() {
+    void isNotWeak_returnsFalse_whenCalledWithPasswort() {
         String password = "Passwort";
         boolean expected = false;
+        boolean actual = PasswordValidation.isNotWeak(password);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void isNotWeak_returnsFalse_whenCalledWithiloveyou() {
+        String password = "iloveyou";
+        boolean expected = false;
+        boolean actual = PasswordValidation.isNotWeak(password);
+        assertEquals(expected, actual);
+    }
+    @Test
+    void isNotWeak_returnsTrue_whenCalledWith382yse9Auif() {
+        String password = "382yse9Auif";
+        boolean expected = true;
         boolean actual = PasswordValidation.isNotWeak(password);
         assertEquals(expected, actual);
     }

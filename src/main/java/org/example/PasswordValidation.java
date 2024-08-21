@@ -49,7 +49,7 @@ public class PasswordValidation {
     }
 
     public static boolean isNotWeak(String password) {
-        String[] weakPasswords = {"password123", "123456", "qwerty", "abc123", "password1", "letmein", "welcome", "123456789", "admin", "Passwort",};
+        String[] weakPasswords = {"password123", "123456", "qwerty", "abc123", "password1", "letmein", "welcome", "123456789", "admin", "Passwort", "iloveyou"};
         if (Arrays.asList(weakPasswords).contains(password)) {
             return false;
         }
