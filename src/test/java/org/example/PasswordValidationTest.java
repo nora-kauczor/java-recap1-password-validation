@@ -30,32 +30,50 @@ class PasswordValidationTest {
     }
 
     @Test
-    void containsDigit_returnsTrue_whenCalledWith67ywfo201(){
+    void containsDigit_returnsTrue_whenCalledWith67ywfo201() {
         String password = "67ywfo201";
         boolean expected = true;
         boolean actual = PasswordValidation.containsDigit(password);
         assertEquals(expected, actual);
     }
+
     @Test
-    void containsDigit_returnsFalse_whenCalledWithMarkusMeiersPasswort(){
+    void containsDigit_returnsFalse_whenCalledWithMarkusMeiersPasswort() {
         String password = "MarkusMeiersPasswort";
         boolean expected = false;
         boolean actual = PasswordValidation.containsDigit(password);
         assertEquals(expected, actual);
     }
+
     @Test
-    void containsDigit_returnsTrue_whenCalledWithPassw0rt(){
+    void containsDigit_returnsTrue_whenCalledWithPassw0rt() {
         String password = "Passw0rt";
         boolean expected = true;
         boolean actual = PasswordValidation.containsDigit(password);
         assertEquals(expected, actual);
     }
 
-@Test
-    void containsUpperAndLowerCase_returnsFalse_whenCalledWithhallomama(){
-String password = "hallomama";
-boolean expected = false;
-boolean actual = PasswordValidation.containsUpperAndLowerCase(password);
-assertEquals(expected, actual);
-}
+    @Test
+    void containsUpperAndLowerCase_returnsFalse_whenCalledWithhallomama() {
+        String password = "hallomama";
+        boolean expected = false;
+        boolean actual = PasswordValidation.containsUpperAndLowerCase(password);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void containsUpperAndLowerCase_returnsFalse_whenCalledWithDGH6764838HGDHGD(){
+        String password = "DGH6764838HGDHGD";
+        boolean expected = false;
+        boolean actual = PasswordValidation.containsUpperAndLowerCase(password);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void containsUpperAndLowerCase_returnsTrue_whenCalledWitheywtwedY(){
+        String password = "eywtwedY";
+        boolean expected = true;
+        boolean actual = PasswordValidation.containsUpperAndLowerCase(password);
+        assertEquals(expected, actual);
+    }
 }
