@@ -156,4 +156,7 @@ class PasswordValidationTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void generatePassword_
+
 }

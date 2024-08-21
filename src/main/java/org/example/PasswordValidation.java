@@ -85,8 +85,8 @@ public class PasswordValidation {
     }
 
     public static String generatePassword() {
-        Random rand = new Random();
-        int numberOfChars = rand.nextInt(18);
+        Random random = new Random();
+        int numberOfChars = random.nextInt(18);
         char[] passwordArray = new char[numberOfChars];
         for (int i = 0; i < passwordArray.length; i++) {
             passwordArray[i] = (char) (random.nextInt(65536));
@@ -94,4 +94,7 @@ public class PasswordValidation {
         if (matchesAllCriteria(passwordArray.toString())){
             return passwordArray.toString();
         }
-    };
+        System.out.println("Something went wrong. Please try again.");
+        return null;
+    }
+}
