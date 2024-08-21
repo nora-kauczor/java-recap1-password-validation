@@ -28,4 +28,12 @@ class PasswordValidationTest {
         boolean actual = PasswordValidation.lengthIs8OrLonger(password);
         assertEquals(expected, actual);
     }
+
+    @Test
+    void containsDigit_returnsTrue_whenCalledWith67ywfo201(){
+        String password = "67ywfo201";
+        boolean expected = true;
+        boolean actual = PasswordValidation.containsDigit(password);
+        assertEquals(expected, actual);
+    }
 }
