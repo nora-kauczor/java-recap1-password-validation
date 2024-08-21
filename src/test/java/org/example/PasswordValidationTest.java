@@ -100,7 +100,8 @@ class PasswordValidationTest {
         assertEquals(expected, actual);
     }
 
-    @Test containsSpecialCharacters_returnsFalse_whenCalledWithhallomama(){
+    @Test
+    void containsSpecialCharacters_returnsFalse_whenCalledWithhallomama(){
         String password = "hallomama";
         boolean expected = false;
         boolean actual = PasswordValidation.containsSpecialCharacters(password);
