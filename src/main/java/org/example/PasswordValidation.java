@@ -54,7 +54,17 @@ public class PasswordValidation {
         }
         return true;
     }
-// public static boolean containsSpecialCharacters (String password)
+
+    public static boolean containsSpecialCharacter (String password){
+        boolean containsSpecialCharacter = false;
+        char[] passwordCharacters = password.toCharArray();
+        for (char character : passwordCharacters) {
+            if (!Character.isDigit(character) && !Character.isLetter(character)) {
+                return containsSpecialCharacter = true;
+            }
+        }
+        return containsSpecialCharacter;
+    }
     // public static boolean matchesAllCriteria(String password)
 
 }

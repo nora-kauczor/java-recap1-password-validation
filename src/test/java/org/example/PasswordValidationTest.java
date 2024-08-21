@@ -101,10 +101,26 @@ class PasswordValidationTest {
     }
 
     @Test
-    void containsSpecialCharacters_returnsFalse_whenCalledWithhallomama(){
+    void containsSpecialCharacter_returnsFalse_whenCalledWithhallomama(){
         String password = "hallomama";
         boolean expected = false;
-        boolean actual = PasswordValidation.containsSpecialCharacters(password);
+        boolean actual = PasswordValidation.containsSpecialCharacter(password);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void containsSpecialCharacter_returnsTrue_whenCalledWith$$$money$$$(){
+        String password = "$$$money$$$";
+        boolean expected = true;
+        boolean actual = PasswordValidation.containsSpecialCharacter(password);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void containsSpecialCharacter_returnsTrue_whenCalledWith$oyuwy(){
+        String password = "$oyuwy";
+        boolean expected = true;
+        boolean actual = PasswordValidation.containsSpecialCharacter(password);
         assertEquals(expected, actual);
     }
 }
