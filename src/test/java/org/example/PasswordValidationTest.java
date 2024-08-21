@@ -123,4 +123,37 @@ class PasswordValidationTest {
         boolean actual = PasswordValidation.containsSpecialCharacter(password);
         assertEquals(expected, actual);
     }
+
+    @Test
+    void matchesAllCriteria_returnsTrue_whenCalledWith78Yidid4537$(){
+        String password = "78Yidid4537$";
+        boolean expected = true;
+        boolean actual = PasswordValidation.matchesAllCriteria(password);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void matchesAllCriteria_returnsTrue_whenCalledWith$$uhdiwdiu546T(){
+        String password = "$$uhdiwdiu546T";
+        boolean expected = true;
+        boolean actual = PasswordValidation.matchesAllCriteria(password);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void matchesAllCriteria_returnsFalse_whenCalledWithhallomama(){
+        String password = "$$uhdiwdiu546T";
+        boolean expected = false;
+        boolean actual = PasswordValidation.matchesAllCriteria(password);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void matchesAllCriteria_returnsFalse_whenCalledWithPassw0rd23(){
+        String password = "Passw0rd23";
+        boolean expected = false;
+        boolean actual = PasswordValidation.matchesAllCriteria(password);
+        assertEquals(expected, actual);
+    }
+
 }
