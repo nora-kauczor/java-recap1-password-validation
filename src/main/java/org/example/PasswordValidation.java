@@ -14,7 +14,6 @@ public class PasswordValidation {
         return password.length() > 7;
     }
 
-
     public static boolean containsDigit(String password) {
         boolean containsDigit = false;
         char[] passwordCharacters = password.toCharArray();
@@ -55,4 +54,7 @@ public class PasswordValidation {
         }
         return true;
     }
+// public static boolean containsSpecialCharacters (String password)
+    // public static boolean matchesAllCriteria(String password)
+
 }

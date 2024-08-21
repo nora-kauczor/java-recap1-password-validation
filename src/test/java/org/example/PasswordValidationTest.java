@@ -99,4 +99,11 @@ class PasswordValidationTest {
         boolean actual = PasswordValidation.isNotWeak(password);
         assertEquals(expected, actual);
     }
+
+    @Test containsSpecialCharacters_returnsFalse_whenCalledWithhallomama(){
+        String password = "hallomama";
+        boolean expected = false;
+        boolean actual = PasswordValidation.containsSpecialCharacters(password);
+        assertEquals(expected, actual);
+    }
 }
