@@ -1,5 +1,6 @@
 package org.example;
 
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -92,6 +93,7 @@ class PasswordValidationTest {
         boolean actual = PasswordValidation.isNotWeak(password);
         assertEquals(expected, actual);
     }
+
     @Test
     void isNotWeak_returnsTrue_whenCalledWith382yse9Auif() {
         String password = "382yse9Auif";
@@ -101,7 +103,7 @@ class PasswordValidationTest {
     }
 
     @Test
-    void containsSpecialCharacter_returnsFalse_whenCalledWithhallomama(){
+    void containsSpecialCharacter_returnsFalse_whenCalledWithhallomama() {
         String password = "hallomama";
         boolean expected = false;
         boolean actual = PasswordValidation.containsSpecialCharacter(password);
@@ -109,7 +111,7 @@ class PasswordValidationTest {
     }
 
     @Test
-    void containsSpecialCharacter_returnsTrue_whenCalledWith$$$money$$$(){
+    void containsSpecialCharacter_returnsTrue_whenCalledWith$$$money$$$() {
         String password = "$$$money$$$";
         boolean expected = true;
         boolean actual = PasswordValidation.containsSpecialCharacter(password);
@@ -117,7 +119,7 @@ class PasswordValidationTest {
     }
 
     @Test
-    void containsSpecialCharacter_returnsTrue_whenCalledWith$oyuwy(){
+    void containsSpecialCharacter_returnsTrue_whenCalledWith$oyuwy() {
         String password = "$oyuwy";
         boolean expected = true;
         boolean actual = PasswordValidation.containsSpecialCharacter(password);
@@ -125,7 +127,7 @@ class PasswordValidationTest {
     }
 
     @Test
-    void matchesAllCriteria_returnsTrue_whenCalledWith78Yidid4537$(){
+    void matchesAllCriteria_returnsTrue_whenCalledWith78Yidid4537$() {
         String password = "78Yidid4537$";
         boolean expected = true;
         boolean actual = PasswordValidation.matchesAllCriteria(password);
@@ -133,7 +135,7 @@ class PasswordValidationTest {
     }
 
     @Test
-    void matchesAllCriteria_returnsTrue_whenCalledWith$$uhdiwdiu546T(){
+    void matchesAllCriteria_returnsTrue_whenCalledWith$$uhdiwdiu546T() {
         String password = "$$uhdiwdiu546T";
         boolean expected = true;
         boolean actual = PasswordValidation.matchesAllCriteria(password);
@@ -141,7 +143,7 @@ class PasswordValidationTest {
     }
 
     @Test
-    void matchesAllCriteria_returnsFalse_whenCalledWithhallomama(){
+    void matchesAllCriteria_returnsFalse_whenCalledWithhallomama() {
         String password = "hallomama";
         boolean expected = false;
         boolean actual = PasswordValidation.matchesAllCriteria(password);
@@ -149,14 +151,17 @@ class PasswordValidationTest {
     }
 
     @Test
-    void matchesAllCriteria_returnsFalse_whenCalledWithPassw0rd23(){
+    void matchesAllCriteria_returnsFalse_whenCalledWithPassw0rd23() {
         String password = "Passw0rd23";
         boolean expected = false;
         boolean actual = PasswordValidation.matchesAllCriteria(password);
         assertEquals(expected, actual);
     }
 
-    @Test
-    void generatePassword_
+    @RepeatedTest(100)
+    void generatePassword_returnsValidPassword_whenCalled() {
+        String password = PasswordValidation.generatePassword();
+        assertTrue(PasswordValidation.matchesAllCriteria(password));
+    }
 
 }

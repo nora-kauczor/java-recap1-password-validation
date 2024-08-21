@@ -86,15 +86,15 @@ public class PasswordValidation {
 
     public static String generatePassword() {
         Random random = new Random();
-        int numberOfChars = random.nextInt(18);
-        char[] passwordArray = new char[numberOfChars];
-        boolean matchesAllCriteria = matchesAllCriteria(passwordArray.toString());
+        char[] passwordArray = new char[9];
+        boolean matchesAllCriteria = matchesAllCriteria(Arrays.toString(passwordArray));
         while (!matchesAllCriteria) {
             for (int i = 0; i < passwordArray.length; i++) {
                 passwordArray[i] = (char) (random.nextInt(65536));
             }
-            matchesAllCriteria = matchesAllCriteria(passwordArray.toString());
+            String password = new String(passwordArray);
+            matchesAllCriteria = matchesAllCriteria(password);
         }
-        return passwordArray.toString();
+        return Arrays.toString(passwordArray);
     }
 }
