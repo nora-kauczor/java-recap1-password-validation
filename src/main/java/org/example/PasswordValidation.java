@@ -77,7 +77,7 @@ public class PasswordValidation {
         if (lengthIs8OrLonger(password) &&
                 containsDigit(password) &&
                 containsUpperAndLowerCase(password) &&
-                isNotWeak(password)&&
+                isNotWeak(password) &&
                 containsSpecialCharacter(password)) {
             return true;
         }
@@ -88,13 +88,13 @@ public class PasswordValidation {
         Random random = new Random();
         int numberOfChars = random.nextInt(18);
         char[] passwordArray = new char[numberOfChars];
-        for (int i = 0; i < passwordArray.length; i++) {
-            passwordArray[i] = (char) (random.nextInt(65536));
+        boolean matchesAllCriteria = matchesAllCriteria(passwordArray.toString());
+        while (!matchesAllCriteria) {
+            for (int i = 0; i < passwordArray.length; i++) {
+                passwordArray[i] = (char) (random.nextInt(65536));
+            }
+            matchesAllCriteria = matchesAllCriteria(passwordArray.toString());
         }
-        if (matchesAllCriteria(passwordArray.toString())){
-            return passwordArray.toString();
-        }
-        System.out.println("Something went wrong. Please try again.");
-        return null;
+        return passwordArray.toString();
     }
 }
