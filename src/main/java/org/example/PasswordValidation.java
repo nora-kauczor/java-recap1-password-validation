@@ -55,7 +55,7 @@ public class PasswordValidation {
         return true;
     }
 
-    public static boolean containsSpecialCharacter (String password){
+    public static boolean containsSpecialCharacter(String password) {
         boolean containsSpecialCharacter = false;
         char[] passwordCharacters = password.toCharArray();
         for (char character : passwordCharacters) {
@@ -65,6 +65,17 @@ public class PasswordValidation {
         }
         return containsSpecialCharacter;
     }
-    // public static boolean matchesAllCriteria(String password)
 
-}
+    public static boolean matchesAllCriteria(String password) {
+        boolean matchesAllCriteria = false;
+        if (lengthIs8OrLonger(password) == true &&
+                containsDigit(password) == true &&
+                containsUpperAndLowerCase(password) == true &&
+                isNotWeak(password) == true &&
+                containsSpecialCharacter(password) == true) {
+            return true;
+        }
+        return matchesAllCriteria;
+    }
+
+    }
