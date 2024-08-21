@@ -21,9 +21,30 @@ public class PasswordValidation {
                 return containsDigit = true;
             }
         }
-       return containsDigit;
+        return containsDigit;
     }
-// public static boolean containsUpperAndLowercase(String password)
-// public static boolean isCommon(String password)
 
+    public static boolean containsUpperAndLowerCase(String password) {
+        boolean containsUpperAndLowerCase = false;
+        boolean containsLowerCase = false;
+        boolean containsUpperCase = false;
+        char[] passwordCharacters = password.toCharArray();
+        for (char character : passwordCharacters) {
+            if (Character.isLowerCase(character)) {
+                containsLowerCase = true;
+            }
+            ;
+        }
+        for (char character : passwordCharacters) {
+            if (Character.isUpperCase(character)) {
+                containsUpperCase = true;
+            }
+        }
+        if (containsLowerCase == true && containsUpperCase == true) {
+            return true;
+        }
+        return containsUpperAndLowerCase;
+    }
+
+    // public static boolean isCommon(String password)
 }

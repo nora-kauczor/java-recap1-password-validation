@@ -52,10 +52,10 @@ class PasswordValidationTest {
     }
 
 @Test
-    void containsUpperAndLowercase_returnsFalse_whenCalledWithhallomama(){
+    void containsUpperAndLowerCase_returnsFalse_whenCalledWithhallomama(){
 String password = "hallomama";
 boolean expected = false;
-boolean actual = PasswordValidation.containsUpperAndLowercase(password);
+boolean actual = PasswordValidation.containsUpperAndLowerCase(password);
 assertEquals(expected, actual);
 }
 }
