@@ -46,5 +46,5 @@ public class PasswordValidation {
         return containsUpperAndLowerCase;
     }
 
-    // public static boolean isCommon(String password)
+    // public static boolean isNotWeak(String password)
 }
