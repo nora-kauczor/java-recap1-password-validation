@@ -46,30 +46,18 @@ class PasswordValidationTest {
         assertEquals(expected, actual);
     }
 
-
-    @Test
-    void containsUpperAndLowerCase_returnsFalse_whenCalledWithhallomama() {
-        String password = "hallomama";
-        boolean expected = false;
+    @ParameterizedTest
+    @CsvSource(
+            value = {"hallomama, false",
+                    "DGH6764838HGDHGD, false",
+                    " wtwedY, true"
+            }
+    )
+    void testContainsUpperAndLowerCase(String password, boolean expected) {
         boolean actual = PasswordValidation.containsUpperAndLowerCase(password);
         assertEquals(expected, actual);
     }
 
-    @Test
-    void containsUpperAndLowerCase_returnsFalse_whenCalledWithDGH6764838HGDHGD() {
-        String password = "DGH6764838HGDHGD";
-        boolean expected = false;
-        boolean actual = PasswordValidation.containsUpperAndLowerCase(password);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void containsUpperAndLowerCase_returnsTrue_whenCalledWitheywtwedY() {
-        String password = "eywtwedY";
-        boolean expected = true;
-        boolean actual = PasswordValidation.containsUpperAndLowerCase(password);
-        assertEquals(expected, actual);
-    }
 
     @Test
     void isNotWeak_returnsFalse_whenCalledWithPasswort() {
