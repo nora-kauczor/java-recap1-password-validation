@@ -59,29 +59,18 @@ class PasswordValidationTest {
     }
 
 
-    @Test
-    void isNotWeak_returnsFalse_whenCalledWithPasswort() {
-        String password = "Passwort";
-        boolean expected = false;
+    @ParameterizedTest
+    @CsvSource(
+            value = {"Passwort, false",
+                    "iloveyou, false",
+                    " 382yse9Auif, true"
+            }
+    )
+    void testIsNotWeak(String password, boolean expected) {
         boolean actual = PasswordValidation.isNotWeak(password);
         assertEquals(expected, actual);
     }
 
-    @Test
-    void isNotWeak_returnsFalse_whenCalledWithiloveyou() {
-        String password = "iloveyou";
-        boolean expected = false;
-        boolean actual = PasswordValidation.isNotWeak(password);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void isNotWeak_returnsTrue_whenCalledWith382yse9Auif() {
-        String password = "382yse9Auif";
-        boolean expected = true;
-        boolean actual = PasswordValidation.isNotWeak(password);
-        assertEquals(expected, actual);
-    }
 
     @Test
     void containsSpecialCharacter_returnsFalse_whenCalledWithhallomama() {
