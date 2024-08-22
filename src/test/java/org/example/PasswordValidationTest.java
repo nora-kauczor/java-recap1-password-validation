@@ -2,10 +2,14 @@ package org.example;
 
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PasswordValidationTest {
+
+
     @Test
     void lengthIs8OrLonger_returnsFalse_whenCalledWith7CharString() {
         String password = new String(new char[7]);
@@ -30,29 +34,18 @@ class PasswordValidationTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    void containsDigit_returnsTrue_whenCalledWith67ywfo201() {
-        String password = "67ywfo201";
-        boolean expected = true;
+    @ParameterizedTest
+    @CsvSource(
+            value = {"67ywfo201, true",
+                    "MarkusMeiersPasswort, false",
+                    " Passw0rt, true"
+            }
+    )
+    void testContainsDigit(String password, boolean expected) {
         boolean actual = PasswordValidation.containsDigit(password);
         assertEquals(expected, actual);
     }
 
-    @Test
-    void containsDigit_returnsFalse_whenCalledWithMarkusMeiersPasswort() {
-        String password = "MarkusMeiersPasswort";
-        boolean expected = false;
-        boolean actual = PasswordValidation.containsDigit(password);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void containsDigit_returnsTrue_whenCalledWithPassw0rt() {
-        String password = "Passw0rt";
-        boolean expected = true;
-        boolean actual = PasswordValidation.containsDigit(password);
-        assertEquals(expected, actual);
-    }
 
     @Test
     void containsUpperAndLowerCase_returnsFalse_whenCalledWithhallomama() {
